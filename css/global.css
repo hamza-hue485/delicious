@@ -1,0 +1,197 @@
+:root{
+    --main-color:#D9BB8A;
+    --bg-color1:#0e0d0c;
+    --bg-color2:#171819;
+    --sub-color:#a7a7a7;;
+    --active-color: #a45b0af8;
+}
+body{
+    font-family: "Nunito", sans-serif;
+    color: var(--bs-light);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+font-family: "Forum", serif;
+}
+.mainColor{
+    color: var(--main-color);
+}
+.subColor{
+    color: var(--sub-color);
+}
+.activeColor {
+    color: var(--active-color);
+}
+/**********************************************mainTitle******************************/
+.title {
+    margin-bottom: 1rem;
+}
+.title h5{
+    font-size: clamp(18px, 1.5vw, 20px);
+    color: var(--main-color);
+    letter-spacing: 1.5px;
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, .2);
+}
+.title img{
+    width: 100px;
+}
+/*********************************mainBtn*****************************/
+.mainBtn {
+    background-color: transparent;
+    color: var(--main-color);
+    border: var(--main-color) solid 2px;
+    border-radius: 5px;
+    padding: 12px 22px;
+    font-size: clamp(12px, 1vw, 16px);
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.8s;
+}
+.mainBtn:before,
+.mainBtn:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: var(--main-color);
+    transition-duration: 0.8s;
+}
+.mainBtn:before{
+    top: 100%;
+}
+.mainBtn::after{
+    top: -100%;
+}
+.mainBtn:hover {
+    color: var(--bs-black);
+}
+.mainBtn:hover::before,
+.mainBtn:hover::after {
+    top: 0;    
+}
+.mainBtn:hover span.word{
+    position: relative;
+    z-index: 1;
+}
+/*********************************allPopup*****************************/
+[class^=popup] {
+  background-color: rgba(228, 197, 144, 0.502);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: none;
+  opacity: 0;
+  transition-duration: 0.75s;
+}
+[class^=popup].active {
+  display: block;
+}
+[class^=popup].show {
+  opacity: 1;
+}
+[class^=popup] .box > i:nth-of-type(1) {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: var(--main-color);
+  font-size: larger;
+  cursor: pointer;
+}
+
+/********************************Repeated elements*****************************/
+section{
+    padding-block: 5rem;
+}
+section:nth-of-type(odd),
+ [class^=popup] .box,
+ form{
+    background-color: var(--bg-color1);
+    background-image: url("../images/bg.png");
+}
+section:nth-of-type(even) {
+    background-color: var(--bg-color2);
+}
+.navLink,
+.phone{
+    text-decoration: none;
+    color: var(--bs-light);
+    position: relative;
+    transition-duration: 0.5s;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.navLink:hover,
+li.active .navLink, 
+.phone{
+  color: var(--main-color);
+}
+.square{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--main-color);
+    background-color: transparent;
+    animation: move-around 8s linear infinite normal; 
+}
+.responsiveFont{
+    font-size: clamp(18px, 1.5vw, 20px);
+}
+.responsiveTitle {
+  font-size: calc(1.6rem + 3.9vw);
+}
+.responsivePar{
+  font-size: clamp(14px, 1.5vw, 17px);
+}
+.view {
+  text-decoration: none;
+  color: var(--main-color);
+}
+.imageWrapper{
+    position: relative;
+    width: 290px;
+    margin-inline: auto;
+    padding-block: 30px;
+    overflow: hidden;
+}
+.imageWrapper img{
+  position: relative;
+}
+.imageWrapper::before {
+    content: "";
+    background-image: url("../images/pattern-8.svg");
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translateX(-50%) rotateY(0deg);
+    transition-duration: 0.9s;
+}
+
+
+/*********************************loading*****************************/
+.loading{
+    background-color: #000;
+    z-index: 3;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition-duration: 0.8s;
+}
+.loading.hide{
+    opacity: 0;
+}
+/***********************section*********************/

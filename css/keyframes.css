@@ -1,0 +1,33 @@
+@keyframes move-around {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes patternRightAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes patternLeftAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(30px);
+    }
+}
+@keyframes iconAnimation {
+    0% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}

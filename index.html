@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport responsivePar"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="keywords"
+      content="Delici Restaurant is a modern and elegant restaurant website featuring seasonal flavors, interactive menu showcasing, online table reservation, and responsive UI design."
+    />
+    <meta
+      name="description"
+      content="Delici Restaurant, Fine Dining Website, Restaurant UI Design, Online Food Menu, Book A Table System, Seasonal Flavors, Modern Web Layout, HTML5, CSS3, Bootstrap, Responsive Design"
+    />
+    <link rel="icon" id="icon" type="image/png" href="images/logo.png" />
+    <title>Delici</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/keyframes.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/index.responsive.css" />
+  </head>
+  <body>
+    <nav class="p-3">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a href="#Home" class="logoImage d-inline-block text-center">
+          <img src="./images/logo.png" alt="Logo" class="img-fluid">
+        </a>
+        <ul class="navLinks list-unstyled mb-0 d-none d-xl-flex column-gap-4">
+          <li data-id="Home" class="active"><a class="navLink fw-semibold" href="#Home">Home</a></li>
+          <li data-id="About"><a class="navLink fw-semibold" href="#About">About Us</a></li>
+          <li data-id="Story"><a class="navLink fw-semibold" href="#Story">Our Story</a></li>
+          <li data-id="Special"><a class="navLink fw-semibold" href="#Special">Special Dish</a></li>
+          <li data-id="Menu"><a class="navLink fw-semibold" href="#Menu">Menu</a></li>
+          <li data-id="Chefs"><a class="navLink fw-semibold" href="#Chefs">Our Chefs</a></li>
+          <li data-id="ContactUs"><a class="navLink fw-semibold" href="#ContactUs">Contact Us</a></li>
+        </ul>
+        <ul class="iconButton list-unstyled mb-0 d-flex flex-column" onclick="openPopup('popupSidebar')">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="popupSidebar text-center overflow-auto" onclick="closePopup('popupSidebar')">
+      <div class="box p-5" onclick="event.stopPropagation()">
+        <i class="fa-regular fa-circle-xmark sideBarExit" onclick="closePopup('popupSidebar')"></i>
+        <a href="#Home" class="logoImage d-block">
+          <img src="./images/logo.png" alt="Logo" class="img-fluid">
+        </a>
+        <img src="./images/sidebar-image.jpg" alt="sidebar-image" class="img-fluid rounded-circle">
+        <ul class="navLinks list-unstyled d-flex flex-column text-start">
+          <li data-id="Home" class="active"><span class="square my-0 me-2"></span><a class="navLink active fw-semibold" href="#Home">Home</a></li>
+          <li data-id="About"><span class="square my-0 me-2"></span><a class="navLink fw-semibold" href="#About">About Us</a></li>
+          <li data-id="Story"><span class="square my-0 me-2"></span><a class="navLink fw-semibold" href="#Story">Our Story</a></li>
+          <li data-id="Special"><span class="square my-0 me-2"></span><a class="navLink fw-semibold" href="#Special">Special Dish</a></li>
+          <li data-id="Menu"><span class="square my-0 me-2"></span><a class="navLink fw-semibold" href="#Menu">Menu</a></li>
+          <li data-id="Chefs"><span class="square my-0 me-2"></span><a class="navLink fw-semibold" href="#Chefs">Our Chefs</a></li>
+          <li data-id="ContactUs"><span class="square my-0 me-2"></span><a class="navLink fw-semibold" href="#ContactUs">Contact Us</a></li>
+        </ul>
+        <div class="content">
+          <h2 class="display-6">Visit Us</h2>
+          <p class="subColor fw-lighter"><i class="fa-solid fa-location-dot activeColor me-2"></i>Delicious City, London 9578, UK</p>
+          <p class="subColor fw-lighter"><i class="fa-regular fa-envelope activeColor me-2"></i>Daily : 8.00 am to 10.00 pm</p>
+          <p class="subColor fw-lighter"><i class="fa-regular fa-envelope activeColor me-2"></i>booking@restaurant.com</p>
+          <p class="square my-3 mx-auto"></p>
+          <p class="responsivePar mb-0 fw-bold">Booking Request</p>
+          <a href="tel:+201021080042" class="phone responsiveTitle mainColor fs-2">+20-102-108-0042</a>
+        </div>
+      </div>
+    </div>
+
+    <header id="Home" class="vh-100 text-center position-relative">
+      <div class="SC-parentCarousel h-100">
+        <div class="childCarousel h-100 active">
+          <div class="container">
+            <div class="title">
+              <h5>DELIGHTFUL EXPERIENCE</h5>
+              <img
+                src="./images/separator.svg"
+                alt="Design divider"
+                class="img-fluid"
+              />
+            </div>
+            <h2 class="display-2 responsiveTitle">
+              Flavors Inspired By <br />
+              The Seasons
+            </h2>
+            <p class="fw-light my-3 mb-lg-5">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+            <a href="#Menu"
+              ><button class="mainBtn">
+                <span class="word">VIEW OUR MENU</span>
+              </button></a
+            >
+          </div>
+        </div>
+        <div class="childCarousel h-100">
+          <div class="container">
+            <div class="title">
+              <h5>AMAZING & DELICIOUS</h5>
+              <img
+                src="./images/separator.svg"
+                alt="Design divider"
+                class="img-fluid"
+              />
+            </div>
+            <h2 class="display-2">
+              Where Every Flavor <br />
+              Tells A Story
+            </h2>
+            <p class="fw-light my-3 mb-lg-5">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+            <a href="#Menu"
+              ><button class="mainBtn">
+                <span class="word">VIEW OUR MENU</span>
+              </button></a
+            >
+          </div>
+        </div>
+        <div class="childCarousel h-100">
+          <div class="container">
+            <div class="title">
+              <h5>TRADATIONAL & HYGINE</h5>
+              <img
+                src="./images/separator.svg"
+                alt="Design divider"
+                class="img-fluid"
+              />
+            </div>
+            <h2 class="display-2">
+              For The Love Of <br />
+              Delicious Food
+            </h2>
+            <p class="fw-light my-3 mb-lg-5">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+            <a href="#Menu"
+              ><button class="mainBtn">
+                <span class="word">VIEW OUR MENU</span>
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+      <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+      <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="animatedBox p-1" onclick="openPopup('popupReservation')">
+        <img
+          src="./images/book-icon-1.png"
+          alt="Animated box"
+          class="img-fluid"
+        />
+        <h6 class="text-black">BOOK A <br />TABLE</h6>
+      </div>
+      <div class="indicators d-none d-md-block">
+        <ul class="list-unstyled d-flex mb-0 column-gap-2">
+          <li class="indicator rounded-circle active"></li>
+          <li class="indicator rounded-circle"></li>
+          <li class="indicator rounded-circle"></li>
+        </ul>
+      </div>
+    </header>
+
+    <div
+      class="popupReservation overflow-auto"
+      onclick="closePopup('popupReservation')"
+    >
+      <form
+        class="box text-center rounded-3 p-5"
+        onclick="event.stopPropagation()"
+      >
+        <div class="title">
+          <h5>RESERVATION</h5>
+          <img
+            src="./images/separator.svg"
+            alt="Design divider"
+            class="img-fluid"
+          />
+        </div>
+        <i
+          class="fa-regular fa-circle-xmark exit"
+          onclick="closePopup('reservation')"
+        ></i>
+        <h2 class="display-5 mb-4">Book A Table</h2>
+        <p class="subColor">
+          Restaurant will be open for all days, Sunday night will be closed, All
+          booking payment is secured with credit card, no charges will be aplly
+          for online booking. no refundable.
+        </p>
+        <p class="mb-5">
+          Booking request <strong class="mainColor">+20-102-108-0042</strong> or
+          fill out the order form
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="item">
+              <input
+                type="text"
+                class="form-control mb-4 bg-transparent border-secondary-subtle"
+                placeholder="Reservation Name..."
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="item">
+              <input
+                type="text"
+                class="form-control mb-4 bg-transparent border-secondary-subtle"
+                placeholder="Phone Number..."
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="item">
+              <input
+                type="number"
+                class="form-control mb-4 bg-transparent border-secondary-subtle"
+                min="1"
+                max="20"
+                placeholder="Seats..."
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="item">
+              <input
+                type="datetime-local"
+                class="form-control date mb-4 bg-transparent border-secondary-subtle"
+              />
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="item">
+              <textarea
+                class="form-control mb-4 bg-transparent border-secondary-subtle"
+                cols="30"
+                rows="5"
+                placeholder="Notes Message..."
+              ></textarea>
+            </div>
+          </div>
+          <a href="#Menu"
+            ><button class="mainBtn">
+              <span class="word">BOOK A TABLE</span>
+            </button></a
+          >
+        </div>
+      </form>
+    </div>
+
+    <section id="About">
+      <div class="backRight">
+        <img
+          src="./images/bg-1.png"
+          alt="Animated Background"
+          class="img-fluid"
+        />
+      </div>
+      <div class="container text-center position-relative z-1">
+        <div class="title">
+          <h5>FLAVORS FOR ROYALTY</h5>
+          <img
+            src="./images/separator.svg"
+            alt="Design divider"
+            class="img-fluid"
+          />
+        </div>
+        <div class="details mb-5">
+          <h2 class="display-5">We Offer Top Notch</h2>
+          <p class="responsivePar my-3">
+            Our master chefs craft exceptional daily meals using <br />
+            the freshest local ingredients to deliver an unforgettable
+            gourmet<br />experience for every guest visiting our restaurant.
+          </p>
+        </div>
+        <div class="row row-gap-5 row-gap-lg-0">
+          <div class="col-lg-4">
+            <div class="item">
+              <div class="imageWrapper">
+                <img
+                  src="./images/offer-image-1.jpg"
+                  alt="offer-image"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="body mt-5">
+                <h2 class="mb-3">Breakfast</h2>
+                <a href="#Menu" class="view responsivePar">VIEW MENU</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-5">
+            <div class="item">
+              <div class="imageWrapper">
+                <img
+                  src="./images/offer-image-2.jpg"
+                  alt="offer-image"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="body mt-5">
+                <h2 class="mb-3">Appetizers</h2>
+                <a href="#Menu" class="view responsivePar">VIEW MENU</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="item">
+              <div class="imageWrapper">
+                <img
+                  src="./images/offer-image-3.jpg"
+                  alt="offer-image"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="body mt-5">
+                <h2 class="mb-3">Drinks</h2>
+                <a href="#Menu" class="view responsivePar">VIEW MENU</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="backLeft">
+        <img
+          src="./images/bg-2.png"
+          alt="Animated Background"
+          class="img-fluid"
+        />
+      </div>
+    </section>
+
+    <section id="Story">
+      <div class="container">
+        <div class="row row-gap-5 row-gap-md-5">
+          <div class="col-md-6 part1 text-center">
+            <div class="item">
+              <div class="title">
+                <h5>FLAVORS FOR ROYALTY</h5>
+                <img
+                  src="./images/separator.svg"
+                  alt="Design divider"
+                  class="img-fluid"
+                />
+              </div>
+              <h2 class="display-5">
+                Every Flavor Tells <br />
+                A Story
+              </h2>
+              <p class="responsivePar">
+                Our restaurant offers an exceptional dining experience filled
+                with rich authentic flavors and traditional culinary recipes
+                carefully prepared daily by our expert master chefs to satisfy
+                every single visitor seeking absolute luxury and delicious
+                gourmet meals every time they come to our place.
+              </p>
+              <p class="my-3">
+                <span class="fw-bold">Book Through Call</span>
+                <br />
+                <a href="tel:+20-102-108-0042" class="view fs-4"
+                  >+20-102-108-0042</a
+                >
+              </p>
+              <a href="#Menu"
+                ><button class="mainBtn">
+                  <span class="word">VIEW OUR MENU</span>
+                </button></a
+              >
+            </div>
+          </div>
+          <div class="col-md-6 part2">
+            <div class="item">
+              <div class="rightImage">
+                <img
+                  src="./images/badge-1.png"
+                  alt="offer-image"
+                  class="img-fluid"
+                />
+              </div>
+              <img
+                src="./images/image-1.jpg"
+                alt="offer-image"
+                class="img-fluid"
+              />
+              <div class="servant">
+                <div class="imageWrapper">
+                  <img
+                    src="./images/image-2.jpg"
+                    alt="offer-image"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Special" class="p-0">
+      <div class="row h-100 g-0">
+        <div class="col-md-6 part1">
+          <div class="item">
+          </div>
+        </div>
+        <div class="col-md-6 part2 d-flex justify-content-center align-items-center">
+          <div class="item">
+            <img src="./images/badge-2.png" alt="badge-2" class="img-fluid">
+            <div class="title">
+              <h5>SPECIAL DISH</h5>
+              <img src="./images/separator.svg" alt="Design divider" class="img-fluid"/>
+            </div>
+            <h2 class="display-5">Lobster Tortellini</h2>
+            <p class="responsivePar fw-light lh-base">Fresh handmade pasta stuffed to perfection with tender, juicy lobster meat, cooked with absolute care and culinary expertise, tossed gently in our signature rich garlic butter sauce, and finished with delicate fresh herbs and freshly grated parmesan cheese.</p>
+            <p class="responsiveFont">
+              <span class="text-decoration-line-through subColor fw-semibold me-2">$40.00</span>
+              <span class="mainColor fw-semibold">$20.00</span>
+            </p>
+            <a href="#Menu"
+              ><button class="mainBtn">
+                <span class="word">VIEW OUR MENU</span>
+              </button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Menu">
+      <div class="backRight">
+        <img src="./images/bg-6.png" alt="Animated bg-6" class="img-fluid">
+      </div>
+      <div class="backLeft">
+        <img src="./images/bg-5.png" alt="Animated bg-5" class="img-fluid">
+      </div>
+      <div class="container">  
+       <div class="title text-center">
+          <h5>SPECIAL SELECTION</h5>
+          <img src="./images/separator.svg" alt="Design divider" class="img-fluid"/>
+        </div>
+        <h2 class="display-5 text-center position-relative">Delicious Menu</h2>
+        <ul class="position-relative navLinks my-2 mb-md-5 list-unstyled d-flex justify-content-start justify-content-sm-center column-gap-4 border-secondary border-2 border-bottom border-top p-3" id="mealsNav">
+          <li data-name="BreakFast" class="active"><a class="navLink active fs-5">Breakfast</a></li>
+          <li data-name="Lunch"><span class="square my-0 me-4"></span><a class="navLink fs-5">Lunch</a></li>
+          <li data-name="Dinner"><span class="square my-0 me-4"></span><a class="navLink fs-5">Dinner</a></li>
+          <li data-name="Drinks"><span class="square my-0 me-4"></span><a class="navLink fs-5">Drinks</a></li>
+        </ul>
+        <div class="slides">
+          <div class="slide BreaKFast active show">
+            <div class="row">
+              <div class="col-md-6 part1">
+                <div class="item">
+                  <div class="row">
+                    <div class="col-4 wrapper">
+                      <div class="frame h-100">
+                        <div class="layout">
+                          <!-- data-menu-type="breakfast" data-menu-index="1" -->
+                          <i class="fa-regular fa-square-plus"></i>
+                        </div>
+                        <div class="img"></div>
+                      </div>
+                  </div>
+                  <div class="col-8">
+                    <div class="content">
+                      <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                        <span class="h6 mainColor">Everyday Pancakes</span>
+                        <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                        <span class="h6 mainColor">$35.92</span>
+                      </p>
+                      <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 wrapper">
+                      <div class="frame h-100">
+                        <div class="layout">
+                          <!-- data-menu-type="breakfast" data-menu-index="1" -->
+                          <i class="fa-regular fa-square-plus"></i>
+                        </div>
+                        <div class="img"></div>
+                      </div>
+                  </div>
+                  <div class="col-8">
+                    <div class="content">
+                      <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                        <span class="h6 mainColor">Everyday Pancakes</span>
+                        <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                        <span class="h6 mainColor">$35.92</span>
+                      </p>
+                      <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 wrapper">
+                      <div class="frame h-100">
+                        <div class="layout">
+                          <i class="fa-regular fa-square-plus"></i>
+                        </div>
+                        <div class="img"></div>
+                      </div>
+                  </div>
+                  <div class="col-8">
+                    <div class="content">
+                      <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                        <span class="h6 mainColor">Everyday Pancakes</span>
+                        <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                        <span class="h6 mainColor">$35.92</span>
+                      </p>
+                      <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="separator d-none d-md-block">
+              </div>
+              <div class="col-md-6 part2">
+                <div class="item">
+                  <div class="row">
+                    <div class="col-4 wrapper">
+                      <div class="frame h-100">
+                        <div class="layout">
+                          <i class="fa-regular fa-square-plus"></i>
+                        </div>
+                        <div class="img"></div>
+                      </div>
+                  </div>
+                  <div class="col-8">
+                    <div class="content">
+                      <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                        <span class="h6 mainColor">Everyday Pancakes</span>
+                        <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                        <span class="h6 mainColor">$35.92</span>
+                      </p>
+                      <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 wrapper">
+                      <div class="frame h-100">
+                        <div class="layout">
+                          <i class="fa-regular fa-square-plus"></i>
+                        </div>
+                        <div class="img"></div>
+                      </div>
+                  </div>
+                  <div class="col-8">
+                    <div class="content">
+                      <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                        <span class="h6 mainColor">Everyday Pancakes</span>
+                        <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                        <span class="h6 mainColor">$35.92</span>
+                      </p>
+                      <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 wrapper">
+                      <div class="frame h-100">
+                        <div class="layout">
+                          <i class="fa-regular fa-square-plus"></i>
+                        </div>
+                        <div class="img"></div>
+                      </div>
+                  </div>
+                  <div class="col-8">
+                    <div class="content">
+                      <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                        <span class="h6 mainColor">Everyday Pancakes</span>
+                        <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                        <span class="h6 mainColor">$35.92</span>
+                      </p>
+                      <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide Lunch">
+              <div class="row">
+                <div class="col-md-6 part1">
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <!-- data-menu-type="breakfast" data-menu-index="1" -->
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <!-- data-menu-type="breakfast" data-menu-index="1" -->
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="separator d-none d-md-block">
+                </div>
+                <div class="col-md-6 part2">
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="slide Dinner">
+              <div class="row">
+                <div class="col-md-6 part1">
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <!-- data-menu-type="breakfast" data-menu-index="1" -->
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <!-- data-menu-type="breakfast" data-menu-index="1" -->
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="separator d-none d-md-block">
+                </div>
+                <div class="col-md-6 part2">
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="slide Drinks">
+              <div class="row">
+                <div class="col-md-6 part1">
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <!-- data-menu-type="breakfast" data-menu-index="1" -->
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <!-- data-menu-type="breakfast" data-menu-index="1" -->
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="separator d-none d-md-block">
+                </div>
+                <div class="col-md-6 part2">
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 wrapper">
+                        <div class="frame h-100">
+                          <div class="layout">
+                            <i class="fa-regular fa-square-plus"></i>
+                          </div>
+                          <div class="img"></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="content">
+                        <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                          <span class="h6 mainColor">Everyday Pancakes</span>
+                          <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                          <span class="h6 mainColor">$35.92</span>
+                        </p>
+                        <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Chefs">
+      <div class="container">
+        <div class="title text-center">
+          <h5>SPECIAL SELECTION</h5>
+          <img src="./images/separator.svg" alt="Design divider" class="img-fluid"/>
+        </div>
+        <h2 class="display-5 text-center mb-4">Meet Our Chef</h2>
+        <div class="row row-gap-4 row-lg-0">
+          <div class="col-lg-4 part">
+            <div class="item rounded-4 overflow-hidden">
+              <div class="image mb-3">
+                <img src="./images/chef-1.jpg" alt="chef-1" class="img-fluid">
+                <div class="layout">
+                  <ul class="list-unstyled d-flex mb-0 column-gap-4">
+                      <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="body">
+                <h2>Willium Joe</h2>
+                <span class="fs-6 fw-semibold mainColor">MASTER CHEF</span>
+                <p class="responsivePar subColor">Lorem Ipsum is simply dummy printing and typeset industry lorem Ipsum has been the industrys.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 part">
+            <div class="item rounded-4 overflow-hidden">
+              <div class="image mb-3">
+                <img src="./images/chef-2.jpg" alt="chef-2" class="img-fluid">
+                <div class="layout">
+                  <ul class="list-unstyled d-flex mb-0 column-gap-4">
+                      <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="body">
+                <h2>Steave Den</h2>
+                <span class="fs-6 fw-semibold mainColor">MASTER CHEF</span>
+                <p class="responsivePar subColor">Lorem Ipsum is simply dummy printing and typeset industry lorem Ipsum has been the industrys.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 part">
+            <div class="item rounded-4 overflow-hidden">
+              <div class="image mb-3">
+                <img src="./images/chef-3.png" alt="chef-3" class="img-fluid">
+                <div class="layout">
+                  <ul class="list-unstyled d-flex mb-0 column-gap-4">
+                      <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="body">
+                <h2>Oliver Joe</h2>
+                <span class="fs-6 fw-semibold mainColor">MASTER CHEF</span>
+                <p class="responsivePar subColor">Lorem Ipsum is simply dummy printing and typeset industry lorem Ipsum has been the industrys.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ContactUs">
+      <div class="container text-center">
+        <form class="p-5">
+          <div class="head">
+            <a href="#Home" class="logoImage d-inline-block text-center mb-4">
+            <img src="./images/logo.png" alt="Logo" class="img-fluid">
+            </a>
+            <p class="subColor fw-lighter"><i class="fa-solid fa-location-dot activeColor me-2"></i>Delicious City, London 9578, UK</p>
+            <p class="subColor fw-lighter"><i class="fa-regular fa-envelope activeColor me-2"></i>Daily : 8.00 am to 10.00 pm</p>
+            <p class="subColor fw-lighter"><i class="fa-regular fa-envelope activeColor me-2"></i>booking@restaurant.com</p>
+            <p class="my-3 mx-auto">
+              <span class="square"></span>
+              <span class="square mx-1"></span>
+              <span class="square"></span>
+            </p>
+          </div>
+          <div class="body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="item">
+                   <input
+                      type="text"
+                      class="form-control mb-4 bg-transparent border-secondary-subtle" placeholder="Name..."/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="item">
+                   <input
+                      type="text"
+                      class="form-control mb-4 bg-transparent border-secondary-subtle" placeholder="Email..."/>
+                </div>
+              </div>
+              <div class="col-12">
+                 <textarea
+                class="form-control mb-4 bg-transparent border-secondary-subtle mb-4"
+                cols="30"
+                rows="5"
+                placeholder="Message..."
+              ></textarea>
+              </div>
+              <a href="#"
+            ><button class="mainBtn w-100">
+              <span class="word">Send A Message</span>
+            </button></a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="text-center p-3">
+      <p class="m-0 fw-semibold subColor">&copy; 2021 <strong class="mainColor">SemiCode</strong>, Ltd. | All Rights Reserved .</p>
+    </footer>
+    <script src="js/bootsrap.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/funcitons.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
