@@ -142,6 +142,57 @@ li.active .navLink,
     background-color: transparent;
     animation: move-around 8s linear infinite normal; 
 }
+.arrowBtn {
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border: var(--main-color) 1px solid;
+  padding: 8px 12px;
+  background-color: transparent;
+  color: var(--main-color);
+  transition: 0.5s;
+  z-index: 1;
+}
+.arrowBtn:before,
+.arrowBtn:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-color: var(--main-color);
+  transition-duration: 0.8s;
+}
+.arrowBtn:before {
+  top: 100%;
+}
+.arrowBtn::after {
+  top: -100%;
+}
+.arrowBtn:hover::before,
+.arrowBtn:hover::after {
+  top: 0;
+}
+.arrowBtn:hover {
+  background-color: var(--main-color);
+  color: var(--bs-black);
+}
+.arrowBtn.next {
+  right: 30px;
+}
+.arrowBtn.prev {
+  left: 30px;
+}
+.arrowBtn i {
+  transform: rotate(-45deg);
+  position: relative;
+  z-index: 1;
+}
+.mainBtn:hover span.word {
+  position: relative;
+  z-index: 1;
+}
 .responsiveFont{
     font-size: clamp(18px, 1.5vw, 20px);
 }

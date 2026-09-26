@@ -1,20 +1,37 @@
 /*350*/
 @media (max-width: 1300px) {
+  .popupReservation .box,
+  .popupMenu .box{
+  max-width: 300px;
+}
+.popupSidebar .box {
+    width: 280px;
+  }
   .logoImage {
     width: 105px;
   }
   .title img {
     width: 70px;
   }
-  #Home > button {
+   .arrowBtn {
     top: 85%;
     transform: translateY(0%) rotate(45deg);
     padding: 5px 9px;
     left: initial;
     right: 95px;
   }
-  #Home > button.prev {
+  .popupMenu .arrowBtn {
+        top: 65%;
+        transform: translateY(0%) rotate(45deg);
+        padding: 2px 5px;
+        left: initial;
+        right: 20px;
+    }
+   .arrowBtn.prev {
     left: initial;
+  }
+   .popupMenu .arrowBtn.prev {
+    right: 70px;
   }
   #Home .animatedBox {
     width: 75px;
@@ -71,6 +88,9 @@
 }
 /*450*/
 @media (min-width: 371px) and (max-width: 1300px) {
+  .popupReservation .box {
+        max-width: 350px;
+    }
   #Story .part2 .rightImage {
     right: 35px;
     top: -25px;
@@ -84,6 +104,14 @@
 }
 /*650*/
 @media (min-width: 577px) and (max-width: 1300px) {
+
+  .popupReservation .box,
+  .popupMenu .box {
+        max-width: 400px;
+    }
+    .popupSidebar .box {
+    width: 350px;
+  }
   .logoImage {
     width: 115px;
   }
@@ -97,6 +125,7 @@
   .popupSideBar .box {
     width: 400px;
   }
+  
   #Special .row .part2 .item {
     max-width: 400px;
   }
@@ -126,21 +155,41 @@
   #ContactUs form {
     width: 400px;
   }
+  .popupMenu .arrowBtn {
+        left: initial;
+        right: 30px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    padding: 8px 12px;
+    }
+    .popupMenu .arrowBtn.prev {
+    right: initial;
+    left: 30px;
+  }
 }
 /*850*/
 @media (min-width: 769px) and (max-width: 1300px) {
+      .popupReservation .box {
+        max-width: 500px;
+      }
+      .popupMenu .box{
+      max-width: 480px;
+    }
+    .popupSidebar .box {
+    width: 400px;
+  }
   .logoImage {
     width: 120px;
   }
   .title img {
     width: 90px;
   }
-  #Home > button {
+   .arrowBtn {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
     padding: 8px 12px;
   }
-  #Home > button.prev {
+   .arrowBtn.prev {
     left: 30px;
     right: initial;
   }
@@ -182,6 +231,14 @@
 }
 /*1050*/
 @media (min-width: 992px) and (max-width: 1300px) {
+      .popupReservation .box {
+        max-width: initial;
+        width: 600px;
+    }
+    .popupMenu .box{
+      max-width: initial;
+      width: 550px;
+    }
   .logoImage {
     width: 130px;
   }
@@ -193,7 +250,7 @@
     width: initial;
   }
   #Story .part2 .rightImage {
-    right: 0px;
+    right: 15px;
     top: 0;
   }
   #Story .part2 {
@@ -216,6 +273,15 @@
 }
 /*1250*/
 @media (min-width: 1181px) and (max-width: 1300px) {
+  .popupReservation .box,
+  .popupMenu .box {
+        max-width: initial;
+        width: 650px;
+    }
+  #Story .part2 .rightImage {
+    right: 0px;
+    top: 0;
+  }
   #Menu .container .slides .slide .row .item .row .wrapper {
     width: 130px;
   }

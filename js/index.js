@@ -14,13 +14,14 @@ let homeEle = document.querySelector("#Home"),
     mealsNavEls = document.querySelectorAll("#mealsNav li"),
     rowMeals = document.querySelectorAll("#Menu .slide .row"),
     specialSlides = document.querySelectorAll("#Menu .slide"),
-    loadingEle = document.querySelector(".loading");
+    loadingEle = document.querySelector(".loading"),
+    popupMenuEl = document.querySelector(".popupMenu");
 // prepareColsItems('BreakFast');
 scrollNavAnimation();
 window.addEventListener("load", function(){
     setTimeout(function(){
         loadingEle.classList.add("d-none");
-    },1200)
+    },0)
     loadingEle.classList.add("hide");
 });
 nextBtn.addEventListener("click", function () {
@@ -53,54 +54,25 @@ mealsNavEls.forEach(function (meal,i) {
         slideArrActives = getActiveArray(specialSlides);
         replaceActive(slideArrActives[0], specialSlides[i])
         let currentMeal = getMealsByType(meal.dataset.type);
-            console.log(currentMeal)
             currentMeal.forEach(function (dish){
-                console.log(rowMeals)
                 rowMeals.forEach(function (rowEl){
-                        console.log(rowEl)
-                        rowEl = `
-                                <div class="col-md-6 part2">
+                        rowEl.innerHTML = `
+                                <div class="col-md-6 part1">
                                     <div class="item">
-                                         <div class="row">
-                                            <div class="col-4 wrapper">
-                                                <div class="frame h-100">
-                                                    <div class="layout">
-                                                        <i class="fa-regular fa-square-plus"></i>
-                                                    </div>
-                                                    <div class="img"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="content">
-                                                    ${getDishCol1(currentMeal)}
-                                                </div>
-                                            </div>
-                                        </div>
+                                        ${getDishCol1(currentMeal)} 
                                     </div>
                                 </div>
                                 <div class="separator d-none d-md-block">
                                 </div>
                                 <div class="col-md-6 part2">
                                     <div class="item">
-                                         <div class="row">
-                                            <div class="col-4 wrapper">
-                                                <div class="frame h-100">
-                                                    <div class="layout">
-                                                        <i class="fa-regular fa-square-plus"></i>
-                                                    </div>
-                                                    <div class="img"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="content">
-                                                    ${getDishCol2(currentMeal)}
-                                                </div>
-                                            </div>
-                                        </div>
+                                       ${getDishCol2(currentMeal)}
                                     </div>
                                 </div>
                     `
+                    console.log(rowEl)
                     });
             });
     });
 });
+
