@@ -1,3 +1,61 @@
+/*********************************loading*****************************/
+.loading{
+    background-color: var(--main-color);
+    z-index: 3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition-duration: 1.5s;
+}
+.loading.hide{
+  opacity: 0;
+}
+.loading .circle{ 
+  width: 100px;
+  height: 100px;
+  border: solid 3px var(--bs-light);
+  border-right-color: var(--bs-black);
+  border-radius: 100%;
+  animation: move-around 1s linear infinite normal;
+}
+.loading span{ 
+    color: transparent;
+    -webkit-text-stroke: 1.8px var(--bs-black);
+    position: relative;
+    display: inline-block;
+}
+.loading span::before{
+  content: attr(data-letter);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--bs-black);
+  animation: letterAnimation 4s linear infinite;
+}
+.loading span:nth-of-type(2):before{
+  animation-delay: 0.2s;
+}
+.loading span:nth-of-type(3):before{
+  animation-delay: 0.4s;
+}
+.loading span:nth-of-type(4):before{
+  animation-delay: 0.6s;
+}
+.loading span:nth-of-type(5):before{
+  animation-delay: 0.8s;
+}
+.loading span:nth-of-type(6):before{
+  animation-delay: 1s;
+}
 /*************************************nav****************************/
 nav{
   position: fixed;
@@ -5,7 +63,6 @@ nav{
   top: 0;
   width: 100%;
   background-color: transparent;
-  box-shadow: 0 -1rem 2rem var(--main-color);
   z-index: 2;
 }
 nav .container .logoImage{

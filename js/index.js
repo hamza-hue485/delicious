@@ -12,9 +12,17 @@ let homeEle = document.querySelector("#Home"),
     sections = document.querySelectorAll("section, header"),
     rowEle = document.querySelectorAll("#Menu .container .row"),
     mealsNavEls = document.querySelectorAll("#mealsNav li"),
-    rowMeals = document.querySelectorAll("#Menu .slide .row");
+    rowMeals = document.querySelectorAll("#Menu .slide .row"),
+    specialSlides = document.querySelectorAll("#Menu .slide"),
+    loadingEle = document.querySelector(".loading");
 // prepareColsItems('BreakFast');
 scrollNavAnimation();
+window.addEventListener("load", function(){
+    setTimeout(function(){
+        loadingEle.classList.add("d-none");
+    },1200)
+    loadingEle.classList.add("hide");
+});
 nextBtn.addEventListener("click", function () {
     replaceSlides(1);
 });
@@ -43,143 +51,54 @@ mealsNavEls.forEach(function (meal,i) {
         replaceActive(oldActiveArrEls[0], meal);
         replaceActive(oldActiveArrEls[0], meal);
         slideArrActives = getActiveArray(specialSlides);
-        console.log()
         replaceActive(slideArrActives[0], specialSlides[i])
-        let mealData = getMealsByType(meal.dataset.name);
-            mealData.forEach(function (dish){
+        let currentMeal = getMealsByType(meal.dataset.type);
+            console.log(currentMeal)
+            currentMeal.forEach(function (dish){
+                console.log(rowMeals)
                 rowMeals.forEach(function (rowEl){
                         console.log(rowEl)
                         rowEl = `
-                        <div class="col-md-6 part1">
-                            <div class="item">
-                            <div class="row">
-                                <div class="col-4 wrapper">
-                                <div class="frame h-100">
-                                    <div class="layout">
-                                    <i class="fa-regular fa-square-plus"></i>
+                                <div class="col-md-6 part2">
+                                    <div class="item">
+                                         <div class="row">
+                                            <div class="col-4 wrapper">
+                                                <div class="frame h-100">
+                                                    <div class="layout">
+                                                        <i class="fa-regular fa-square-plus"></i>
+                                                    </div>
+                                                    <div class="img"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="content">
+                                                    ${getDishCol1(currentMeal)}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="img"></div>
                                 </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="content">
-                                <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
-                                    <span class="h6 mainColor">${dish.name}</span>
-                                    <span class="decoratedSpan d-none d-sm-inline-block"></span>
-                                    <span class="h6 mainColor">${dish.price}</span>
-                                </p>
-                                <p class="subColor responsivePar">${dish.miniDescription}</p>
+                                <div class="separator d-none d-md-block">
                                 </div>
-                            </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 wrapper">
-                                <div class="frame h-100">
-                                    <div class="layout">
+                                <div class="col-md-6 part2">
+                                    <div class="item">
+                                         <div class="row">
+                                            <div class="col-4 wrapper">
+                                                <div class="frame h-100">
+                                                    <div class="layout">
+                                                        <i class="fa-regular fa-square-plus"></i>
+                                                    </div>
+                                                    <div class="img"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="content">
+                                                    ${getDishCol2(currentMeal)}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="img"></div>
                                 </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="content">
-                                <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
-                                    <span class="h6 mainColor">${dish.name}</span>
-                                    <span class="decoratedSpan d-none d-sm-inline-block"></span>
-                                    <span class="h6 mainColor">${dish.price}</span>
-                                </p>
-                                <p class="subColor responsivePar">${dish.miniDescription}</p>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 wrapper">
-                                <div class="frame h-100">
-                                    <div class="layout">
-                                    <i class="fa-regular fa-square-plus"></i>
-                                    </div>
-                                    <div class="img"></div>
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="content">
-                                <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
-                                    <span class="h6 mainColor">${dish.name}</span>
-                                    <span class="decoratedSpan d-none d-sm-inline-block"></span>
-                                    <span class="h6 mainColor">${dish.price}</span>
-                                </p>
-                                <p class="subColor responsivePar">${dish.miniDescription}</p>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="separator d-none d-md-block">
-                        </div>
-                        <div class="col-md-6 part2">
-                            <div class="item">
-                            <div class="row">
-                                <div class="col-4 wrapper">
-                                <div class="frame h-100">
-                                    <div class="layout">
-                                    <i class="fa-regular fa-square-plus"></i>
-                                    </div>
-                                    <div class="img"></div>
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="content">
-                                <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
-                                    <span class="h6 mainColor">Everyday Pancakes</span>
-                                    <span class="decoratedSpan d-none d-sm-inline-block"></span>
-                                    <span class="h6 mainColor">$35.92</span>
-                                </p>
-                                <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 wrapper">
-                                <div class="frame h-100">
-                                    <div class="layout">
-                                    <i class="fa-regular fa-square-plus"></i>
-                                    </div>
-                                    <div class="img"></div>
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="content">
-                                <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
-                                    <span class="h6 mainColor">Everyday Pancakes</span>
-                                    <span class="decoratedSpan d-none d-sm-inline-block"></span>
-                                    <span class="h6 mainColor">$35.92</span>
-                                </p>
-                                <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 wrapper">
-                                <div class="frame h-100">
-                                    <div class="layout">
-                                    <i class="fa-regular fa-square-plus"></i>
-                                    </div>
-                                    <div class="img"></div>
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="content">
-                                <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
-                                    <span class="h6 mainColor">Everyday Pancakes</span>
-                                    <span class="decoratedSpan d-none d-sm-inline-block"></span>
-                                    <span class="h6 mainColor">$35.92</span>
-                                </p>
-                                <p class="subColor responsivePar">A delicious and crispy golden treat served hot and fresh daily.</p>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
                     `
                     });
             });

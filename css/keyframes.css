@@ -31,3 +31,26 @@
         width: 100%;
     }
 }
+
+@keyframes letterAnimation{
+    0%{
+    opacity: 0;
+    transform: rotateY(-90deg);
+    }
+    25%{
+     opacity: 1;
+     transform: rotateY(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: rotateY(-0deg);
+    }
+    75% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+    100% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+}
