@@ -21,7 +21,7 @@ scrollNavAnimation();
 window.addEventListener("load", function(){
     setTimeout(function(){
         loadingEle.classList.add("d-none");
-    },0)
+    },2900)
     loadingEle.classList.add("hide");
 });
 nextBtn.addEventListener("click", function () {
