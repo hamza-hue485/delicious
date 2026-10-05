@@ -1,79 +1,81 @@
 function replaceSlides(direction) {
-    let currentActiveSlide = getActiveArray(slides)[0],
-        currentSlideIndex = Array.from(slides).indexOf(currentActiveSlide),
-        newSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+  let currentActiveSlide = getActiveArray(slides)[0],
+  currentSlideIndex = Array.from(slides).indexOf(currentActiveSlide),
+  newSlideIndex = ((currentSlideIndex + direction + slides.length) % slides.length),
+  currentActiveIndicator = getActiveArray(indicators)[0];
     replaceActive(currentActiveSlide, slides[newSlideIndex]);
+    replaceActive(currentActiveIndicator, indicators[newSlideIndex]);
 };
 function replaceActive(oldActiveEL, newActiveEL) {
-    oldActiveEL.classList.remove("active");
-    newActiveEL.classList.add("active");
-    oldActiveEL?.classList.remove("show");
-    setTimeout(function(){
-        newActiveEL?.classList.add("show") 
-    },1)
+  oldActiveEL.classList.remove("active");
+  newActiveEL.classList.add("active");
+  oldActiveEL?.classList.remove("show");
+  setTimeout(function () {
+    newActiveEL?.classList.add("show")
+  }, 1)
 };
 function replaceIndicator(indicator) {
-    let currentActiveIndicator = getActiveArray(indicators)[0],
+  let currentActiveIndicator = getActiveArray(indicators)[0],
     currentActiveSlide = getActiveArray(slides)[0],
     newActiveSlide = slides[indicators.indexOf(indicator)];
-    replaceActive(currentActiveIndicator, indicator);
-    replaceActive(currentActiveSlide, newActiveSlide);
+  replaceActive(currentActiveIndicator, indicator);
+  replaceActive(currentActiveSlide, newActiveSlide);
 };
 function getActiveArray(elements) {
-    return Array.from(elements).filter(function (el) {
-        return el.classList.contains("active");
-    });
+  return Array.from(elements).filter(function (el) {
+    return el.classList.contains("active");
+  });
 };
-function openPopup(popupName){
-    let currentPopup = document.querySelector(`.${popupName}`);
-    currentPopup.classList.add("active");
-    setTimeout(function(){
-        currentPopup.classList.add("show");
-    }, 0);
+function openPopup(popupName) {
+  let currentPopup = document.querySelector(`.${popupName}`);
+  currentPopup.classList.add("active");
+  setTimeout(function () {
+    currentPopup.classList.add("show");
+  }, 0);
 };
-function closePopup(popupName){
-    let currentPopup = document.querySelector(`.${popupName}`);
-    currentPopup.classList.remove("show");
-    setTimeout(function(){
-        currentPopup.classList.remove("active");
-    }, 800);
+function closePopup(popupName) {
+  let currentPopup = document.querySelector(`.${popupName}`);
+  currentPopup.classList.remove("show");
+  setTimeout(function () {
+    currentPopup.classList.remove("active");
+  }, 800);
 };
-function scrollNavAnimation(){
-    let currentScroll = scrollY;
-    if(currentScroll > 0){
-        navEl.style.backgroundColor ="#202020";
-        navUlEl.style.alignSelf ="initial";
-      }else{
-        navEl.style.backgroundColor ="transparent";
-        navUlEl.style.alignSelf ="flex-end";
-        
-      };
-      if( currentScroll > lastScroll ){
-        navEl.style.transform ="translateY(-100%)";
-        navEl.style.transitionDuration ="0.75s"
-        navEl.style.boxShadow ="initial";
-      }else{
-        navEl.style.transform ="translateY(0%)"
-    };    
-    lastScroll = currentScroll;
+function scrollNavAnimation() {
+  let currentScroll = scrollY;
+  if (currentScroll > 0) {
+    navEl.style.backgroundColor = "#202020";
+    navUlEl.style.alignSelf = "initial";
+  } else {
+    navEl.style.backgroundColor = "transparent";
+    navUlEl.style.alignSelf = "flex-end";
+
+  };
+  if (currentScroll > lastScroll) {
+    navEl.style.transform = "translateY(-100%)";
+    navEl.style.transitionDuration = "0.75s"
+    navEl.style.boxShadow = "initial";
+  } else {
+    navEl.style.transform = "translateY(0%)"
+  };
+  lastScroll = currentScroll;
 };
-function scrollNavLinks(section){
-    if(scrollY >section.offsetTop - navEl.clientHeight && scrollY < section.offsetTop + section.clientHeight ){   
-        let oldActiveArrEls = getActiveArray(liElements),
-        newActiveArrEls = document.querySelectorAll(`li[data-id="${section['id']}"]`);
-        replaceActive(oldActiveArrEls[0], newActiveArrEls[0])
-        replaceActive(oldActiveArrEls[1], newActiveArrEls[1])
-    };
+function scrollNavLinks(section) {
+  if (scrollY > section.offsetTop - navEl.clientHeight && scrollY < section.offsetTop + section.clientHeight) {
+    let oldActiveArrEls = getActiveArray(liElements),
+      newActiveArrEls = document.querySelectorAll(`li[data-id="${section['id']}"]`);
+    replaceActive(oldActiveArrEls[0], newActiveArrEls[0])
+    replaceActive(oldActiveArrEls[1], newActiveArrEls[1])
+  };
 };
 function getMealsByType(colName) {
-    return allMenu.filter(function(meal) {
-        return meal.type === colName;
-    });
-}  
-function getDishCol1(meal){
+  return allMenu.filter(function (meal) {
+    return meal.type === colName;
+  });
+}
+function getDishCol1(meal) {
   let servant = "";
-  meal.forEach( function(dish, i) {
-    if(i < 3){
+  meal.forEach(function (dish, i) {
+    if (i < 3) {
       servant += `
                         <div class="row dish" data-dish-id="${dish.id}">
                           <div class="col-4 wrapper">
@@ -96,14 +98,14 @@ function getDishCol1(meal){
                             </div>
                         </div>
                   `
-                                  };
+    };
   });
-  return servant ;
+  return servant;
 };
-function getDishCol2(meal){
+function getDishCol2(meal) {
   let servant = "";
-  meal.forEach( function(dish, i) {
-    if(i >= 3){
+  meal.forEach(function (dish, i) {
+    if (i >= 3) {
       servant += `
                         <div class="row dish" data-dish-id="${dish.id}">
                           <div class="col-4 wrapper">
@@ -126,14 +128,14 @@ function getDishCol2(meal){
                             </div>
                         </div>
                   `
-                                  };
+    };
   });
-  return servant ;
+  return servant;
 };
-function preparePopupMenu(that){
+function preparePopupMenu(that) {
   let dishId = that.closest(".dish").dataset.dishId;
-  allMenu.forEach(function(dish){
-    if(dish.id == dishId){
+  allMenu.forEach(function (dish) {
+    if (dish.id == dishId) {
       popupMenuEl.innerHTML = `
       <div
         class="box dish text-center rounded-3 p-5 rounded-4" 
@@ -179,27 +181,21 @@ function preparePopupMenu(that){
   });
   openPopup('popupMenu');
 };
-function replaceSlides(direction) {
-    let currentActiveSlide = getActiveArray(slides)[0],
-        currentSlideIndex = Array.from(slides).indexOf(currentActiveSlide),
-        newSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
-    replaceActive(currentActiveSlide, slides[newSlideIndex]);
-};
-function replaceDishesImages(that){
- let dish = that.closest(".dish");
-   dishType = dish.dataset.dishType,
-   dishIdNum = Number(dish.dataset.dishId) ,
-  dishImage = dish.querySelector("#dishImage"),
+function replaceDishesImages(that) {
+  let dish = that.closest(".dish");
+  dishType = dish.dataset.dishType,
+    dishIdNum = Number(dish.dataset.dishId),
+    dishImage = dish.querySelector("#dishImage"),
     dishImageArrSrc = dishImage.src.split("/"),
     meal = getMealsByType(dishType);
-    if (that.classList.contains("next")) {
-        dishIdNum = (dishIdNum + 1) % meal.length;
-      } else {
-        dishIdNum = (dishIdNum - 1 + meal.length) % meal.length;
-      };
-      let newNameImg = meal[dishIdNum].images[0];
-    dish.dataset.dishId = dishIdNum;
-    dishImageArrSrc[dishImageArrSrc.length - 1] = newNameImg;
+  if (that.classList.contains("next")) {
+    dishIdNum = (dishIdNum + 1) % meal.length;
+  } else {
+    dishIdNum = (dishIdNum - 1 + meal.length) % meal.length;
+  };
+  let newNameImg = meal[dishIdNum].images[0];
+  dish.dataset.dishId = dishIdNum;
+  dishImageArrSrc[dishImageArrSrc.length - 1] = newNameImg;
   dishImage.src = dishImageArrSrc.join("/");
-  
+
 };

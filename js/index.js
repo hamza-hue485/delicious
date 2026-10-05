@@ -21,7 +21,7 @@ scrollNavAnimation();
 window.addEventListener("load", function(){
     setTimeout(function(){
         loadingEle.classList.add("d-none");
-    },2900)
+    },2850)
     loadingEle.classList.add("hide");
 });
 nextBtn.addEventListener("click", function () {
@@ -41,13 +41,10 @@ window.addEventListener("scroll", function () {
         scrollNavLinks(section);
     });
 });
-indicators.forEach(function (indicator) {
-    indicator.addEventListener("click", function () {
-        replaceIndicator(indicator);
-    });
-});
 mealsNavEls.forEach(function (meal,i) {
     meal.addEventListener("click", function () {
+        if (meal.classList.contains("active")) {
+        return;}
         let oldActiveArrEls = getActiveArray(mealsNavEls);
         replaceActive(oldActiveArrEls[0], meal);
         replaceActive(oldActiveArrEls[0], meal);
@@ -70,7 +67,6 @@ mealsNavEls.forEach(function (meal,i) {
                                     </div>
                                 </div>
                     `
-                    console.log(rowEl)
                     });
             });
     });

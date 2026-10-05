@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     opacity: 1;
-    transition: 1s 2.5s;
+    transition: 0.8s 1.5s;
 }
 .loading.hide{
   opacity: 0;
@@ -127,10 +127,15 @@ nav .container .iconButton li:nth-of-type(2){
 .popupSidebar .box > *{
   margin-bottom: 1.5rem;
 }
+.popupSidebar .box > img{
+  max-width: 155px;
+}
 .popupSidebar .box ul li{
   border-top: 1px solid var(--bs-light);
   border-bottom: 1px solid var(--bs-light);
   padding-block: 15px;
+  width: 220px;
+  margin-inline: auto;
 }
 .popupSidebar .box ul li .square{
   display: none;
@@ -143,6 +148,9 @@ nav .container .iconButton li:nth-of-type(2){
   width: 90%;
 }
 /****************************Home********************/
+#Home{
+  overflow: hidden;
+}
 #Home .SC-parentCarousel .childCarousel {
   background-image: url("../images/slider-1.jpg");
   background-position: center;
@@ -155,7 +163,10 @@ nav .container .iconButton li:nth-of-type(2){
   left: 0;
   top: 0;
   width: 100%;
-  /* transform: scale(1.3); */
+  transform: scale(1.3);
+  opacity: 0;
+  z-index: 0;
+  transition: 0.7s;
 }
 #Home .SC-parentCarousel .childCarousel:nth-of-type(2) {
   background-image: url("../images/slider-2.jpg");
@@ -164,7 +175,8 @@ nav .container .iconButton li:nth-of-type(2){
   background-image: url("../images/slider-3.jpg");
 }
 #Home .SC-parentCarousel .childCarousel.active {
-  /* transform: scale(1); */
+  opacity: 1;
+  transform: scale(1);
   z-index: 1;
 }
 #Home .SC-parentCarousel .childCarousel .container > *{
@@ -496,12 +508,17 @@ form textarea{
 #Chefs .container .image{
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+  max-width: fit-content;
 }
 #Chefs .container .item .image img{
   transition: 0.5s;
+  opacity: 1;
 }
 #Chefs .container .item:hover .image img{
   transform: rotate(2deg) scale(1.04);
+  opacity: .6;
+  transform: scale(1.05) rotate(2deg);
 }
 #Chefs .container .image .layout{
   position: absolute;
@@ -522,10 +539,10 @@ form textarea{
 }
 #Chefs .container .image .layout ul li{
   opacity: 0;
-  transition-duration:0.3s;
+  transition-duration: 0.5s;
 }
 #Chefs .container .item:hover .image .layout ul li{
-  transition-delay:0.4s;
+  transition-delay: 0.6s;
   opacity: 1;
 }
 #Chefs .container .item:hover .image .layout{
