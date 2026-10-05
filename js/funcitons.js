@@ -91,7 +91,7 @@ function getDishCol1(meal) {
                                     <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
                                       <span class="h6 mainColor">${dish.name}</span>
                                       <span class="decoratedSpan d-none d-sm-inline-block"></span>
-                                      <span class="h6 mainColor">${dish.price}</span>
+                                      <span class="h6 mainColor">$${dish.price}</span>
                                     </p>
                                     <p class="subColor responsivePar">${dish.miniDescription}</p>
                                 </div>
@@ -107,26 +107,26 @@ function getDishCol2(meal) {
   meal.forEach(function (dish, i) {
     if (i >= 3) {
       servant += `
-                        <div class="row dish" data-dish-id="${dish.id}">
-                          <div class="col-4 wrapper">
-                            <div class="frame h-100">
-                                    <div class="layout">
-                                        <i class="fa-regular fa-square-plus" onclick="preparePopupMenu(this)"></i>
-                                    </div>
-                                    <div class="img" style = "background-image: url('./images/${dish.images}')"></div>
-                                </div>
+                <div class="row dish" data-dish-id="${dish.id}">
+                  <div class="col-4 wrapper">
+                    <div class="frame h-100">
+                            <div class="layout">
+                                <i class="fa-regular fa-square-plus" onclick="preparePopupMenu(this)"></i>
                             </div>
-                            <div class="col-8">
-                                <div class="content">
-                                    <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
-                                      <span class="h6 mainColor">${dish.name}</span>
-                                      <span class="decoratedSpan d-none d-sm-inline-block"></span>
-                                      <span class="h6 mainColor">${dish.price}</span>
-                                    </p>
-                                    <p class="subColor responsivePar">${dish.miniDescription}</p>
-                                </div>
-                            </div>
+                            <div class="img" style = "background-image: url('./images/${dish.images}')"></div>
                         </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="content">
+                            <p class="d-flex align-items-center column-gap-3 column-gap-sm-0">
+                              <span class="h6 mainColor">${dish.name}</span>
+                              <span class="decoratedSpan d-none d-sm-inline-block"></span>
+                              <span class="h6 mainColor">$${dish.price}</span>
+                            </p>
+                            <p class="subColor responsivePar">${dish.miniDescription}</p>
+                        </div>
+                    </div>
+                </div>
                   `
     };
   });
@@ -163,7 +163,7 @@ function preparePopupMenu(that) {
                   class="img-fluid"
                   id="dishImage"
                 />
-                <span class="price fw-bolder responsivePar">${dish.price}</span>
+                <span class="price fw-bolder responsivePar">$${dish.price}</span>
                 <button class="next arrowBtn" onclick="replaceDishesImages(this)">
                   <i class="fa-solid fa-chevron-right"></i>
                 </button>
@@ -182,20 +182,28 @@ function preparePopupMenu(that) {
   openPopup('popupMenu');
 };
 function replaceDishesImages(that) {
-  let dish = that.closest(".dish");
+  let dish = that.closest(".dish"),
   dishType = dish.dataset.dishType,
-    dishIdNum = Number(dish.dataset.dishId),
-    dishImage = dish.querySelector("#dishImage"),
-    dishImageArrSrc = dishImage.src.split("/"),
-    meal = getMealsByType(dishType);
+  meal = getMealsByType(dishType),
+  dishIdNum = Number(dish.dataset.dishId),
+  dishImage = dish.querySelector("#dishImage"),
+  dishImageArrSrc = dishImage.src.split("/"),
+  dishPrice = dish.querySelector(".price");
+  console.log(dishPrice)
   if (that.classList.contains("next")) {
     dishIdNum = (dishIdNum + 1) % meal.length;
   } else {
     dishIdNum = (dishIdNum - 1 + meal.length) % meal.length;
   };
-  let newNameImg = meal[dishIdNum].images[0];
+  let newNameImg = meal[dishIdNum].images[0],
+      newPrice = meal[dishIdNum].price;
+      dishPrice.innerHTML = `$${newPrice}`;
   dish.dataset.dishId = dishIdNum;
   dishImageArrSrc[dishImageArrSrc.length - 1] = newNameImg;
   dishImage.src = dishImageArrSrc.join("/");
-
+};
+function replaceDishesPrices(that) {
+  let dish = that.closest(".dish"),
+  dishType = dish.dataset.dishType;
+  meal = getMealsByType(dishType);
 };

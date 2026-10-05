@@ -25,13 +25,13 @@
         transform: translateY(0%) rotate(45deg);
         padding: 2px 5px;
         left: initial;
-        right: 20px;
+        right: 10px;
     }
    .arrowBtn.prev {
     left: initial;
   }
    .popupMenu .arrowBtn.prev {
-    right: 70px;
+    right: 60px;
   }
   #Home .animatedBox {
     width: 75px;
@@ -51,7 +51,7 @@
     max-width: 280px;
   }
   #Story .part2 .rightImage {
-    right: 15px;
+    right: 35px;
   }
 
   #Story .part2 .servant {
@@ -92,7 +92,6 @@
         max-width: 350px;
     }
   #Story .part2 .rightImage {
-    right: 35px;
     top: -25px;
   }
   #Story .part2 .servant .imageWrapper {
@@ -134,7 +133,7 @@
     width: initial;
   }
   #Story .part2 .rightImage {
-    right: 0;
+    right: 12px;
     top: 0;
   }
   #Story .part2 .servant {
@@ -250,7 +249,7 @@
     width: initial;
   }
   #Story .part2 .rightImage {
-    right: 15px;
+    right: 20px;
     top: 0;
   }
   #Story .part2 {
